@@ -1,0 +1,5 @@
+<h2>登録済みルーム一覧</h2>
+
+<% @rooms.each do |room| %>
+    <%= link_to room.name, room_path(room) %>
+<% end %>
