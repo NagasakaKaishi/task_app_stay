@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :rooms
-  get '/reservation', to: 'rooms#reserve'
+  resources :reservations
+  post '/confirm', to: 'reservations#confirm'
 end

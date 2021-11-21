@@ -1,2 +1,19 @@
 <h2>Showページ</h2>
-<%= @room.name %>
+<%= @room.cost %>
+
+<div>
+  <%= form_for(@reservation, url: { controller: 'reservations', action: 'confirm' }) do |f| %>
+    <%= f.label "開始日" %>
+    <%= f.date_field :start_date %>
+    
+    <%= f.label "終了日" %>
+    <%= f.date_field :end_date %>
+    
+    <%= f.label "人数" %>
+    <%= f.number_field :number_of_people %>
+    
+    <%= hidden_field_tag :room, @room.id %>
+    
+    <%= f.submit "登録" %>
+  <% end %>
+</div>

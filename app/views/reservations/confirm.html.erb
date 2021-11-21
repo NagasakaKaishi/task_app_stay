@@ -1,0 +1,22 @@
+<h2>予約内容確認</h2>
+
+<div>
+  <%= form_for(@reservation) do |f| %>
+    <%= f.label "開始日" %>
+    <%= @reservation.start_date %>
+    
+    <%= f.label "終了日" %>
+    <%= @reservation.end_date %>
+    
+    <%= f.label "人数" %>
+    <%= @reservation.number_of_people %>
+    
+    <%= f.label "合計金額" %>
+    <%= @reservation.total_cost %>
+    
+    <%= hidden_field_tag :room, @room.id %>
+
+    <%= f.submit "予約確定" %>
+    <%= f.submit '投稿画面に戻る', name: 'back' %>
+  <% end %>
+</div>

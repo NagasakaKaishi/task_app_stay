@@ -6,4 +6,6 @@ class Room < ApplicationRecord
   validates :address, presence: true
   validates :picture, presence: true
   validates :user_id, presence: true
+  
+  has_many :reservations, dependent: :destroy
 end
