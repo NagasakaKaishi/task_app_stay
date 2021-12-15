@@ -1,5 +1,5 @@
 <header>
-  <h1>PoteShare</h1>
+  <%= link_to "PoteShare", root_path, class:"navbar-brand h1" %>
     <ul>
       <% if logged_in? %>
         <li class="dropdown">
@@ -8,9 +8,9 @@
           </a>
           <ul class ="dropdown-menu">
             <li><%= link_to "ルーム登録", new_room_path %></li>
-            <li><%= link_to "予約済みルーム一覧", '#' %></li>
+            <li><%= link_to "予約済みルーム一覧", reservations_path %></li>
             <li><%= link_to "登録済みルーム一覧", rooms_path %></li>
-            <li><%= link_to "設定", '#' %></li>
+            <li><%= link_to "設定", user_path(current_user) %></li>
             <li>
               <%= link_to "ログアウト", logout_path, method: :delete %>
             </li>
@@ -18,8 +18,14 @@
         </li>
         
       <% else %>
-        <li><%= link_to "ログイン", login_path %></li>
-        <li><%= link_to "登録する", new_user_path %></li>
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <%= link_to "ログイン", login_path, class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "登録する", new_user_path, class:"nav-link"%>
+        </li>
+      </ul>
       <% end %>
     </ul>
 </header>

@@ -1,0 +1,6 @@
+<div>
+  <h2>Index</h2>
+  <% @reservations.each do |reservation| %>
+    <%= link_to reservation.start_date, room_path(reservation.room) %>
+  <% end %>
+</div>
