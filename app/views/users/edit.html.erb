@@ -1,0 +1,20 @@
+<div>
+  <%= form_for(current_user) do |f| %>
+    <div class="form-group">
+      <%= f.label "メールアドレス" %>
+      <%= f.text_field :email, class:"form-control" %>
+      
+      <%= f.label "変更後パスワード（変更する場合のみ入力）" %>
+      <%= f.text_field :password, class:"form-control" %>
+      
+      <%= f.label "パスワード確認用（変更する場合のみ入力）" %>
+      <%= f.text_field :password_confirmation, class:"form-control" %>
+      
+      <%= f.label "現在のパスワード" %>
+      <%= f.text_field :password, class:"form-control" %>
+    </div>
+    
+    <%= f.submit "更新", class:"btn btn-primary" %>
+    
+  <% end %>
+</div>

@@ -1,5 +1,6 @@
 class Room < ApplicationRecord
   belongs_to :user
+  mount_uploader :picture, PictureUploader
   validates :name, presence: true
   validates :content, presence: true, length: { maximum: 140 }
   validates :cost, presence: true

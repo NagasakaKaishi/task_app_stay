@@ -14,6 +14,9 @@ gem 'bootstrap', '4.3.1'
 gem 'jquery-rails'
 # has_secure_password用gem
 gem 'bcrypt',         '3.1.12'
+# 画像をリサイズしたり、本番環境で画像をアップロードする
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
