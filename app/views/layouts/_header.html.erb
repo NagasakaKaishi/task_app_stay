@@ -1,5 +1,13 @@
 <header>
   <%= link_to "PoteShare", root_path, class:"navbar-brand h1" %>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <%= form_with url: search_rooms_path, method: :get, local: true do |f| %>
+        <%= f.text_field :name, class:"form-control" %>
+        <%= f.submit "探す", class:"btn btn-primary"  %>
+      <% end %>
+    </li>
+  </ul>
     <ul>
       <% if logged_in? %>
         <li class="dropdown">

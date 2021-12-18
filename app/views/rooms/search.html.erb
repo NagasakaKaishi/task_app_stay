@@ -1,0 +1,15 @@
+<h1>Room search</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr class="border-bottom">
+        <td><%= room.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

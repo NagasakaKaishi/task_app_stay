@@ -24,6 +24,14 @@ class RoomsController < ApplicationController
     end
   end
   
+  def search
+    if params[:name].present?
+      @rooms = Room.where('name LIKE ?', "%#{params[:name]}%")
+    else
+      @rooms = Room.none
+    end
+  end
+  
   private
     def room_params
       params.require(:room).permit(:name, :content, :cost, :address, :picture)
