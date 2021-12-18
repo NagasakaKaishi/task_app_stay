@@ -1,0 +1,33 @@
+<div>
+  <h2>プロフィール</h2>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href=<%= user_path(current_user) %>>アカウント</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href=<%= profile_users_path %>>プロフィール</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  <table class="table">
+    <tr class="border-bottom"><td><%= image_tag @user.icon %></td></tr>
+  </table>
+  <%= form_for(@user)  do |f| %>
+    <%= render 'shared/user_error_messages' %>
+    <%= f.label "アイコン画像"  %>
+    <%= f.file_field :icon, class: 'form-control' %> <br>
+    
+    <%= f.label "名前" %>
+    <%= f.text_field :name, class: 'form-control' %>
+
+    <%= f.label "自己紹介" %>
+    <%= f.text_field :introduction, class: 'form-control' %>
+
+    <%= f.submit "更新", class: "btn btn-primary" %>
+    
+    <%= hidden_field_tag :setting_id, "2" %>
+  <% end %>
+</div>

@@ -1,0 +1,32 @@
+<h1><%= @room.name %></h1>
+<table class="table">
+  <tbody>
+    <tr>
+      <td><%= image_tag @room.picture.url %></td>
+    </tr>
+    <tr>
+      <td><%= @room.address %></td>
+    </tr>
+    <tr class="border-bottom">
+      <td><%= @room.content %></td>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+  <%= form_for(@reservation, url: { controller: 'reservations', action: 'confirm' }) do |f| %>
+    <p><%= @room.cost %>¥/日</p>
+    <%= f.label "開始日" %>
+    <%= f.date_field :start_date, class:"form-control" %>
+    
+    <%= f.label "終了日" %>
+    <%= f.date_field :end_date, class:"form-control" %>
+    
+    <%= f.label "人数" %>
+    <%= f.number_field :number_of_people, class:"form-control" %>
+    
+    <%= hidden_field_tag :room, @room.id %>
+    
+    <%= f.submit "登録", class:"btn btn-primary" %>
+  <% end %>
+</div>
